@@ -1,0 +1,38 @@
+PROCEDURE ss (T: ARRAY_OF Integer[n]; i,j,k:INTEGER;)
+VAR
+    
+BEGIN
+    FOR i FROM 1 TO n-1 STEP 1  DO
+       k:= T[i];
+       j:= i-1;
+    WHILE (j >= 0 && T[j] > k) DO
+        T[j + 1] := T[j]; 
+            j := j - 1; 
+    END_WHILE
+        T[j + 1] := k; 
+   END_FOR
+END
+
+ALGORITHM simple sorting
+VAR
+T: ARRAY_OF Integer[n];
+i,j:INTEGER;
+BEGIN
+       Read (n);
+   FOR i FROM 0 TO n-1 STEP 1  DO
+       Read (arr[i]);
+   END_FOR
+  
+  ss(T)
+   
+   FOR i FROM 0 TO n-1 STEP 1  DO
+      write (arr[i]);
+
+  END_FOR
+
+
+
+
+END
+
+
